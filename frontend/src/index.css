@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--light-gradient: linear-gradient(to bottom, #fff, #eee);
+	--medium-gradient: linear-gradient(to bottom, #f7f7f7, #929aab);
+	--dark-gradient: linear-gradient(to bottom, #929aab, #393e46);
+	--darker-gradient: linear-gradient(to right, #393e46, #000);
+	--text-gradient: linear-gradient(to bottom, #888a8f, #000);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+*:focus {
+	outline: none;
+}
+
+*::first-letter {
+	text-transform: uppercase;
+}
+
+.email::first-letter {
+	text-transform: lowercase !important;
+}
+
+li {
+	list-style: none;
+}
+
+.nav-links {
+	@apply md:flex md:flex-row md:h-16 md:relative md:justify-center md:top-0 fixed top-0 h-screen z-20 flex-col w-[80%] min-w-[300px];
+}
+
+.nav-link {
+	@apply md:h-full flex items-center px-4 md:py-0 py-7 ease-linear duration-200 before:absolute before:rounded-full before:h-[4px] before:left-0 before:bottom-0 before:bg-dark-color before:transition-all before:ease-linear;
+}
+
+.nav-link:hover {
+	@apply bg-light-gradient;
+}
+
+.nav-link.active {
+	@apply relative bg-light-gradient before:w-full;
+}
+
+@media screen and (max-width: 767px) {
+	.nav-links {
+		background: rgba(0, 0, 0, 0.5);
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(8px);
+		-webkit-backdrop-filter: blur(4.3px);
+		@apply pt-32;
+	}
+	.nav-link {
+		@apply text-lg text-body-color ps-6;
+	}
+	.nav-link:not(:first-of-type) {
+		@apply border-t border-border-color;
+	}
+	.nav-link:hover {
+		@apply bg-darker-gradient;
+	}
+	.nav-link.active {
+		@apply relative bg-darker-gradient before:bg-light-gradient before:h-full before:w-[4px] before:rounded-none;
+	}
+}
+
+.btn {
+	@apply rounded-full;
+}
+
+.hero-content {
+	@apply flex flex-col gap-5 justify-center items-center absolute top-0 bg-black bg-opacity-60 text-container-color w-full h-full;
+}
+
+.heading {
+	@apply md:text-4xl text-3xl font-bold capitalize my-10 text-center py-4 relative before:absolute before:w-[160px] before:left-1/2 before:-translate-x-1/2 before:bg-darker-gradient before:h-[3px] before:rounded-full before:-bottom-1 after:absolute after:-bottom-[10px] after:left-1/2 after:-translate-x-1/2 after:w-4 after:bg-darker-gradient after:h-4 after:rounded-full after:border-2 border-body-color;
+	background-image: var(--text-gradient);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.form {
+	@apply flex flex-col p-4 justify-center items-center border border-border-color max-w-[500px] mx-auto rounded-lg gap-5 shadow-md;
+}
+
+.form-input {
+	@apply flex flex-col gap-2 w-full;
+}
+
+.form-input label {
+	@apply text-dark-color font-semibold select-none;
+}
+
+.form-input input,
+.form-input textarea {
+	@apply w-full p-2 border border-border-color rounded-lg;
+}
+.form button {
+	@apply w-full p-2 rounded-lg bg-darker-gradient text-body-color md:text-lg font-semibold ease-linear duration-200 opacity-90 hover:opacity-100 active:scale-95;
+}
+
+.profilePic {
+	@apply w-10 h-10 rounded-full;
+}
+
+.text-gradient {
+	background: var(--text-gradient);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.pop-up {
+	@apply fixed inset-0 z-50 flex justify-center items-center;
+	background: rgba(0, 0, 0, 0.15);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4.3px);
+}
+
+.pop-up-content {
+	@apply bg-darker-gradient p-6 rounded-lg flex flex-col justify-center items-center text-body-color gap-4;
+}
+
+.pop-up-content i {
+	@apply text-6xl text-red-600;
+}
+
+.pop-up-content h1 {
+	@apply md:text-2xl text-xl font-semibold text-center;
+}
+
+.pop-up-content .btns {
+	@apply flex items-center gap-10;
+}
+
+.pop-up-content button {
+	@apply rounded-md md:text-base text-sm px-6 p-2 border border-border-color ease-linear duration-100;
+}
+
+.pop-up-content .cancel {
+	@apply bg-light-gradient text-dark-color;
+}
+
+.pop-up-content button {
+	@apply active:scale-95;
+}
+
+.comment:not(:last-of-type) {
+	@apply border-b;
+}
