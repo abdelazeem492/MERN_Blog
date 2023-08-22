@@ -28,7 +28,7 @@ app.use(
 
 app.use(
 	cors({
-		origin: process.env.FRONTEND_URL,
+		origin: [process.env.FRONTEND_URL, "https://mernbblog.vercel.app"],
 	}),
 );
 
