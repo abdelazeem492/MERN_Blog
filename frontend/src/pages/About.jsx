@@ -20,8 +20,8 @@ const AboutUsPage = () => {
 					</p>
 					<p className='w-full border-b border-border-color' />
 					<p className='text-lg'>
-						Thank you for visiting our blog. We hope you enjoy reading our posts
-						as much as we enjoy creating them!
+						Thank you ♥ for visiting our blog. We hope you enjoy reading our
+						posts as much as we enjoy creating them!
 					</p>
 					<p className='w-full border-b border-border-color' />
 					<div className='flex gap-10  items-center'>
