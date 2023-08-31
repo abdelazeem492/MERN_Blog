@@ -86,16 +86,19 @@ const Post = () => {
 			</Link>
 			<h1 className='md:text-4xl text-3xl font-semibold my-5'>{post?.title}</h1>
 			<div className='flex items-center gap-14 mb-10'>
-				<div className='flex items-center md:gap-3 gap-2'>
+				<Link
+					to={`/profile/${post?.user?._id}`}
+					className='flex items-center md:gap-3 gap-2'
+				>
 					<img
-						className='md:w-12 md:h-12 h-10 w-10 rounded-full'
+						className='md:w-12 md:h-12 h-10 w-10 rounded-full object-cover'
 						src={post?.user?.profilePic?.url}
 						alt={post?.user?.firstName}
 					/>
 					<p className='text-dark-color font-semibold md:text-lg '>
 						{post?.user?.firstName} {post?.user?.lastName}
 					</p>
-				</div>
+				</Link>
 				<p className='text-light-color md:text-sm font-semibold text-xs'>
 					{new Date(post?.createdAt).toDateString() +
 						" " +

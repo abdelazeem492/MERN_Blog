@@ -42,7 +42,7 @@ const Comments = ({ comments, userId }) => {
 								<img
 									src={comment.userInfo?.profilePic?.url}
 									alt={comment.userInfo?.firstName}
-									className='rounded-full md:w-10 md:h-10 w-9 h-9'
+									className='rounded-full md:w-10 md:h-10 w-9 h-9 object-cover'
 								/>
 								<h4>
 									{comment.userInfo?.firstName} {comment.userInfo?.lastName}
@@ -56,7 +56,7 @@ const Comments = ({ comments, userId }) => {
 							</p>
 						</div>
 						<p className='ps-12 mt-2 text-gray-600 text-lg'>{comment?.text}</p>
-						{(userId === comment?.user || userId === comment?.user?._id) && (
+						{userId === comment?.user && (
 							<div className='flex items-center gap-3 justify-end me-5 text-sm mt-2'>
 								<button
 									onClick={() => {

@@ -86,7 +86,7 @@ const Profile = () => {
 					<img
 						src={file ? URL.createObjectURL(file) : profile?.profilePic?.url}
 						alt={profile?.firstName + " " + profile?.lastName}
-						className='w-24 h-24 rounded-full'
+						className='w-24 h-24 rounded-full object-cover'
 					/>
 					{user?._id === id && (
 						<form

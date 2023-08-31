@@ -28,7 +28,11 @@ app.use(
 
 app.use(
 	cors({
-		origin: [process.env.FRONTEND_URL, "https://mernbblog.vercel.app"],
+		origin: [
+			process.env.FRONTEND_URL,
+			"https://mernbblog.vercel.app",
+			"http://localhost:3000",
+		],
 	}),
 );
 
@@ -47,7 +51,7 @@ app.use(notFoundHandler);
 app.use(errorHandler);
 
 //* Running Server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8888;
 app.listen(PORT, () => {
 	console.log(`Server is running on http://localhost:${PORT}`);
 });

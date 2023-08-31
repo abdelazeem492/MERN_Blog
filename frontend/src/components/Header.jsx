@@ -93,7 +93,7 @@ const Header = () => {
 						<img
 							src={user?.profilePic?.url}
 							alt='user'
-							className='profilePic cursor-pointer'
+							className='profilePic cursor-pointer object-cover'
 							onClick={() => setDropdown(!dropdown)}
 						/>
 						{dropdown && (

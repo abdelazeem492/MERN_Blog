@@ -35,7 +35,7 @@ const PostCard = ({ post, page, username, userPic, userId }) => {
 						<img
 							src={post?.user?.profilePic?.url || userPic}
 							alt='user'
-							className='md:w-10 md:h-10 h-9 w-9 rounded-full'
+							className='md:w-10 md:h-10 h-9 w-9 rounded-full object-cover'
 						/>
 						<p className='md:text-base text-sm'>
 							{post?.user?.firstName && post?.user?.lastName
